@@ -26,12 +26,10 @@ interface Payload {
 /** patch original content with vite entry esmodule script */
 export async function getHtmlContent(payload: Payload) {
   const {
-    pagesDir,
     templatePath,
     pageName,
     pageTitle,
     pageEntry,
-    isMPA,
     data,
     extraData,
   } = payload;
@@ -39,9 +37,9 @@ export async function getHtmlContent(payload: Payload) {
   const entryJsPath = (() => {
     // entry case: src/pages/index/main.ts or /src/pages/index/main.ts or ./src/pages/index/main.ts => /src/pages/index/main.ts
     if (['/', '/index.html'].includes(extraData.url)) {
-      return `/${pagesDir}/index/${pageEntry}`;
+      return `index/${pageEntry}`;
     } else {
-      return `/${pagesDir}/${pageName}/${pageEntry}`;
+      return `${pageName}/${pageEntry}`;
     }
   })();
   try {
