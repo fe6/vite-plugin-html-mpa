@@ -37,7 +37,7 @@ export async function getHtmlContent(payload: Payload) {
   const entryJsPath = (() => {
     // entry case: src/pages/index/main.ts or /src/pages/index/main.ts or ./src/pages/index/main.ts => /src/pages/index/main.ts
     if (['/', '/index.html'].includes(extraData.url)) {
-      return `index/${pageEntry}`;
+      return `${pageEntry}`;
     } else {
       return `${pageName}/${pageEntry}`;
     }
