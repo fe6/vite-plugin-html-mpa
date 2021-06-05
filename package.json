@@ -1,0 +1,75 @@
+{
+  "name": "vite-plugin-html-mpa",
+  "version": "0.0.0",
+  "description": "html mpa for vite",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "author": "李梦龙 <649076408@qq.com>",
+  "scripts": {
+    "cz": "git cz",
+    "build": "tsup src/index.ts --dts",
+    "lint": "prettier --write --parser typescript \"src/**/*.ts\"",
+    "test": "echo missing test",
+    "prepublishOnly": "npm run build"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/fe6/vite-plugin-html-mpa",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fe6/vite-plugin-html-mpa.git"
+  },
+  "keywords": [
+    "vite-plugin-html",
+    "vite-plugin-html-mpa",
+    "mpa",
+    "vite-plugin",
+    "html",
+    "html-mpa",
+    "html-template",
+    "virtual-html"
+  ],
+  "dependencies": {
+    "shelljs": "0.8.4",
+    "vite": "^2.3.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "7.2.0",
+    "@commitlint/config-conventional": "7.1.2",
+    "@fe6/norm": "^3.0.4",
+    "@types/lodash": "^4.14.168",
+    "@types/shelljs": "0.8.8",
+    "commitizen": "2.10.1",
+    "cz-customizable": "5.2.0",
+    "lint-staged": "10.5.4",
+    "lodash": "^4.17.21",
+    "prettier": "2.2.1",
+    "tsup": "3.12.1",
+    "typescript": "4.1.3",
+    "vite": "^2.3.3",
+    "yorkie": "2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-configrc.js"
+    }
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e $GIT_PARAMS"
+  },
+  "lint-staged": {
+    "**/**.{ts,js,json}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": "^15.10.0"
+  }
+}
