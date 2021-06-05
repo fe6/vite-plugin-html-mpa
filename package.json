@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-html-mpa",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "html mpa for vite",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
   ],
   "author": "李梦龙 <649076408@qq.com>",
   "scripts": {
-    "cz": "git cz",
+    "cz": "cz",
     "build": "tsup src/index.ts --dts",
     "lint": "prettier --write --parser typescript \"src/**/*.ts\"",
     "test": "echo missing test",
@@ -42,7 +42,7 @@
     "@fe6/norm": "^3.0.4",
     "@types/lodash": "^4.14.168",
     "@types/shelljs": "0.8.8",
-    "commitizen": "2.10.1",
+    "commitizen": "^4.2.4",
     "cz-customizable": "5.2.0",
     "lint-staged": "10.5.4",
     "lodash": "^4.17.21",
