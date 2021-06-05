@@ -39,21 +39,9 @@ export async function getHtmlContent(payload: Payload) {
   const entryJsPath = (() => {
     // entry case: src/pages/index/main.ts or /src/pages/index/main.ts or ./src/pages/index/main.ts => /src/pages/index/main.ts
     if (['/', '/index.html'].includes(extraData.url)) {
-      if (isMPA) {
-        return pageEntry.includes('src')
-          ? `/${pageEntry.replace('/./', '/').replace('//', '/')}`
-          : `/${pagesDir}/index/${pageEntry}`;
-      } else {
-        return '/src/main1';
-      }
+      return `/${pagesDir}/index/${pageEntry}`;
     } else {
-      if (isMPA) {
-        return pageEntry.includes('src')
-          ? `/${pageEntry.replace('/./', '/').replace('//', '/')}`
-          : `/${pagesDir}/${pageName}/${pageEntry}`;
-      } else {
-        return '/src/main2';
-      }
+      return `/${pagesDir}/${pageName}/${pageEntry}`;
     }
   })();
   try {
